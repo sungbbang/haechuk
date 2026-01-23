@@ -1,7 +1,24 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 토스 스타일 다크모드 색상 */
+.dark {
+  --dark-bg: #17171c;
+  --dark-surface: #1c1c21;
+  --dark-elevated: #26262d;
+  --dark-border: #2c2c35;
+  --dark-text: #ececef;
+  --dark-text-sub: #8e8e93;
+  --dark-text-third: #5c5c64;
+}
+
 body {
   @apply antialiased;
+}
+
+.dark body {
+  background-color: var(--dark-bg);
 }
 
 @keyframes fade-in {

@@ -11,7 +11,7 @@ function TeamRow({ ranking, isLast }: TeamRowProps) {
   return (
     <div
       className={`flex items-center gap-4 px-4 py-3.5 ${
-        !isLast ? 'border-b border-slate-100' : ''
+        !isLast ? 'border-b border-slate-100 dark:border-(--dark-border)' : ''
       }`}
     >
       {/* 순위 배지 */}
@@ -20,9 +20,9 @@ function TeamRow({ ranking, isLast }: TeamRowProps) {
           rank === 1
             ? 'bg-blue-500 text-white'
             : rank === 2
-              ? 'bg-slate-200 text-slate-600'
+              ? 'bg-slate-200 text-slate-600 dark:bg-(--dark-border) dark:text-(--dark-text)'
               : rank === 3
-                ? 'bg-slate-100 text-slate-500'
+                ? 'bg-slate-100 text-slate-500 dark:bg-(--dark-border) dark:text-(--dark-text-sub)'
                 : 'text-slate-400'
         }`}
       >
@@ -32,14 +32,14 @@ function TeamRow({ ranking, isLast }: TeamRowProps) {
       {/* 팀명 */}
       <span
         className={`flex-1 text-sm ${
-          rank === 1 ? 'font-bold text-slate-900' : 'font-medium text-slate-900'
+          rank === 1 ? 'font-bold text-slate-900 dark:text-(--dark-text)' : 'font-medium text-slate-900 dark:text-(--dark-text)'
         }`}
       >
         {team}
       </span>
 
       {/* 전적 */}
-      <div className='hidden items-center gap-1 text-xs text-slate-500 sm:flex'>
+      <div className='hidden items-center gap-1 text-xs text-slate-500 sm:flex dark:text-(--dark-text-sub)'>
         <span>
           {won}승 {drawn}무 {lost}패
         </span>
@@ -48,7 +48,7 @@ function TeamRow({ ranking, isLast }: TeamRowProps) {
       {/* 승점 */}
       <span
         className={`w-12 text-right text-sm ${
-          rank === 1 ? 'font-bold text-blue-500' : 'font-semibold text-slate-700'
+          rank === 1 ? 'font-bold text-blue-500 dark:text-blue-400' : 'font-semibold text-slate-700 dark:text-(--dark-text-sub)'
         }`}
       >
         {points}점

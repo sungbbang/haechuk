@@ -5,7 +5,7 @@ interface SliderIndicatorProps {
 
 function SliderIndicator({ total, current }: SliderIndicatorProps) {
   return (
-    <div className='mt-3 flex items-center justify-center gap-1 text-sm text-slate-500'>
+    <div className='mt-3 flex items-center justify-center gap-1 text-sm text-slate-500 dark:text-(--dark-text-sub)'>
       <span className='tabular-nums'>
         {current + 1} / {total}
       </span>
