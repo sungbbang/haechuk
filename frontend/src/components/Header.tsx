@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { menuItems, userMenuItems } from '../constants/menu';
 import ThemeToggle from './ThemeToggle';
 
@@ -35,22 +36,22 @@ function Header() {
       <header className='sticky top-0 z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-md dark:border-(--dark-border) dark:bg-(--dark-surface)/80'>
         <div className='mx-auto flex h-16 max-w-5xl items-center justify-between px-6'>
           <div className='flex items-center gap-8'>
-            <a
-              href='/'
+            <Link
+              to='/'
               className='text-2xl font-semibold tracking-wider text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-(--dark-text)'
             >
               <span aria-hidden='true'>⚽</span> 해축
-            </a>
+            </Link>
             {/* 데스크톱 네비게이션 */}
             <nav className='hidden items-center gap-1 sm:flex'>
               {menuItems.map(item => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.path}
+                  to={item.path}
                   className='w-18 rounded-md py-2.5 text-center text-lg font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-(--dark-text-sub) dark:hover:bg-(--dark-elevated) dark:hover:text-(--dark-text)'
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
@@ -88,14 +89,14 @@ function Header() {
                 {isProfileMenuOpen && (
                   <div className='absolute right-0 mt-2 w-48 rounded-xl border border-slate-200 bg-white py-2 shadow-lg dark:border-(--dark-border) dark:bg-(--dark-elevated)'>
                     {userMenuItems.map(item => (
-                      <a
+                      <Link
                         key={item.path}
-                        href={item.path}
+                        to={item.path}
                         onClick={closeProfileMenu}
                         className='block px-4 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none focus-visible:ring-inset dark:text-(--dark-text-sub) dark:hover:bg-(--dark-elevated) dark:hover:text-(--dark-text)'
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     ))}
                     <div className='my-1 border-t border-slate-100 dark:border-(--dark-border)' />
                     <button
@@ -189,13 +190,13 @@ function Header() {
           <ul className='space-y-1'>
             {menuItems.map(item => (
               <li key={item.name}>
-                <a
-                  href={item.path}
+                <Link
+                  to={item.path}
                   onClick={closeSidebar}
                   className='block rounded-xl px-4 py-2.5 text-base font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-(--dark-text-sub) dark:hover:bg-(--dark-elevated) dark:hover:text-(--dark-text)'
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -207,13 +208,13 @@ function Header() {
               <ul className='space-y-1'>
                 {userMenuItems.map(item => (
                   <li key={item.path}>
-                    <a
-                      href={item.path}
+                    <Link
+                      to={item.path}
                       onClick={closeSidebar}
                       className='block rounded-xl px-4 py-2.5 text-base font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-(--dark-text-sub) dark:hover:bg-(--dark-elevated) dark:hover:text-(--dark-text)'
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import MatchCard from './MatchCard';
 import SliderIndicator from './SliderIndicator';
 import SliderNavButton from './SliderNavButton';
@@ -33,12 +34,12 @@ function TodayMatchSection() {
               오늘의 경기
             </h2>
             {!isEmpty && (
-              <a
-                href='/schedule'
+              <Link
+                to='/schedule'
                 className='text-sm text-slate-500 transition-colors hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-(--dark-text-sub) dark:hover:text-(--dark-text)'
               >
                 더보기
-              </a>
+              </Link>
             )}
           </div>
 
@@ -109,12 +110,12 @@ function TodayMatchSection() {
             )}
 
             {isExpanded && (
-              <a
-                href='/schedule'
+              <Link
+                to='/schedule'
                 className='mt-3 flex items-center justify-center py-2 text-sm text-slate-500 transition-colors hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none dark:text-(--dark-text-sub) dark:hover:text-(--dark-text)'
               >
                 일정 전체보기
-              </a>
+              </Link>
             )}
           </>
         )}

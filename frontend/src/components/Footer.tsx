@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { menuItems } from '../constants/menu';
 
 function Footer() {
@@ -8,12 +9,12 @@ function Footer() {
           <ul className='flex gap-8'>
             {menuItems.map(item => (
               <li key={item.name}>
-                <a
-                  href={item.path}
+                <Link
+                  to={item.path}
                   className='text-base font-medium text-slate-500 transition-colors hover:text-blue-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:text-(--dark-text-sub) dark:hover:text-blue-400'
                 >
                   {item.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

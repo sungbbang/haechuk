@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import LeagueSelector from './LeagueSelector';
 import TeamRow from './TeamRow';
 import { leaguesData } from './constants';
@@ -18,12 +19,12 @@ function LeagueRankingSection() {
             onChange={setSelectedLeagueId}
           />
         </div>
-        <a
-          href='/standings'
+        <Link
+          to='/standings'
           className='hidden text-sm text-slate-500 transition-colors hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none sm:block dark:text-(--dark-text-sub) dark:hover:text-(--dark-text)'
         >
           더보기
-        </a>
+        </Link>
       </div>
 
       {/* 순위 리스트 */}
@@ -38,12 +39,12 @@ function LeagueRankingSection() {
       </div>
 
       {/* 모바일 하단 더보기 */}
-      <a
-        href='/standings'
+      <Link
+        to='/standings'
         className='mt-3 flex items-center justify-center py-2 text-sm text-slate-500 transition-colors hover:text-slate-900 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:outline-none sm:hidden dark:text-(--dark-text-sub) dark:hover:text-(--dark-text)'
       >
         순위 전체보기
-      </a>
+      </Link>
     </section>
   );
 }
